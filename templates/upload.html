@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload CSV Files</title>
+</head>
+<body>
+    <h1>Upload CSV Files for Matching</h1>
+    <form method="post" action="/" enctype="multipart/form-data">
+        <label for="ns_file">Native Speaker (NS) CSV File:</label>
+        <input type="file" name="ns_file" id="ns_file" required><br><br>
+        <label for="nns_file">Non-Native Speaker (NNS) CSV File:</label>
+        <input type="file" name="nns_file" id="nns_file" required><br><br>
+        <input type="submit" value="Upload and Process">
+    </form>
+</body>
+</html>

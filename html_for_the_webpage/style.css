@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.login-container,
+.dashboard-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.login-form {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="file"],
+button[type="submit"] {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+button[type="submit"] {
+    cursor: pointer;
+}

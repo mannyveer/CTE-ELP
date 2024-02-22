@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Matching Tool</title>
+    <style>
+        /* Basic styling */
+        body, html {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #500000;
+        }
+
+        .admin-dashboard-container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .admin-upload-section, .admin-results-section {
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        input[type=file] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-bottom: 20px; /* Added margin for spacing */
+        }
+
+        .admin-upload-button {
+            background-color: #500000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .admin-upload-button:hover {
+            background-color: #700000;
+        }
+
+        /* Animation styles */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Add more styles as necessary */
+    </style>
+</head>
+<body>
+
+<div class="admin-dashboard-container">
+    <div class="admin-upload-section">
+        <h2>Upload Data for Matching</h2>
+        <p>Please upload the Excel files for English-Dominant and Non-English-Dominant speakers. Ensure the format adheres to the provided template.</p>
+
+        <form id="uploadForm" action="http://manveer488.pythonanywhere.com/upload" method="post" enctype="multipart/form-data">
+            <label for="nativeSpeakersFile">English-Dominant Speakers (NS) File:</label><br>
+            <input type="file" name="nativeSpeakersFile" accept=".csv" required><br>
+
+            <label for="nonNativeSpeakersFile">Non-English-Dominant Speakers (NNS) File:</label><br>
+            <input type="file" name="nonNativeSpeakersFile" accept=".csv" required><br>
+
+            <button type="submit" class="admin-upload-button">Process Matching</button>
+        </form>
+    </div>
+
+    <div class="admin-results-section fade-in" id="resultsSection" style="display: none;">
+        <h2>Download Processed Matches</h2>
+        <p>Your files have been processed. You can download the results below.</p>
+        <a href="#" id="downloadLink">Download Matched Results</a>
+    </div>
+</div>
+
+</body>
+</html>
